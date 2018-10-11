@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-md-5 card">
+
+          <div class="card-header">
+            <strong>Searching And Filtering</strong>
+          </div>
+
+          <div class="card-body">
+            <form action="">
+              <h3>Text Search</h3>
+              <div class="form-group">
+                <label for="tweetText">Tweet Text</label>
+                <input type="text" class="form-control" placeholder="Searching Term" name="tweetText">
+                <span class="small">Leave empty to search all available streams</span>
+              </div>
+              <div class="form-group">
+                <label for="userName">UserName</label>
+                <input type="text" class="form-control" placeholder="Searching Term" name="userName">
+                <span class="small">Leave empty to search all available streams</span>
+              </div>
+
+              <hr>
+
+              <h3>Sorting Tweets</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="radio" name="sortParam"  class="form-check-input"  value="timestamp_ms" checked>Timestamp<br>
+                  <input type="radio" name="sortParam" class="form-check-input"  value="text">Tweet Text<br>
+                  <input type="radio" name="sortParam" class="form-check-input"  value="quote_count">Quote Count<br>
+                  <input type="radio" name="sortParam" class="form-check-input"  value="reply_count">Reply Count<br>
+                  <input type="radio" name="sortParam" class="form-check-input"  value="favorite_count">Favorite Count<br>
+                  <input type="radio" name="sortParam" class="form-check-input"  value="retweet_count">Retweet Count<br>
+                </div>
+                <div class="col-md-6">
+                  <input type="radio" name="ordering" class="form-check-input"  value="1" checked>Ascending<br>
+                  <input type="radio" name="ordering" class="form-check-input"  value="-1">Decending<br>
+                </div>
+              </div>
+
+              <hr>
+
+              <h3>Advance Filters</h3>
+              <div class="form-group">
+                <label for="textFilter">Text Filter</label>
+                <div class="row">
+                  <div class="col-md-4">
+                    Tweet Text
+                  </div>
+                  <div class="col-md-4">
+                    <select name="tweetSearch">
+                      <option value="0">No Filter</option>
+                      <option value="start">Starts With</option>
+                      <option value="end">Ends With</option>
+                      <option value="contains">Contains</option>
+                      <option value="matches">Exact Match</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" name="filter[]" value="">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    User's Name
+                  </div>
+                  <div class="col-md-4">
+                    <select name="userFilter">
+                      <option value="0">No Filter</option>
+                      <option value="start">Starts With</option>
+                      <option value="end">Ends With</option>
+                      <option value="contains">Contains</option>
+                      <option value="matches">Exact Match</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" name="filter[]" value="">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    Screen Name
+                  </div>
+                  <div class="col-md-4">
+                    <select name="screenName">
+                      <option value="0">No Filter</option>
+                      <option value="start">Starts With</option>
+                      <option value="end">Ends With</option>
+                      <option value="contains">Contains</option>
+                      <option value="matches">Exact Match</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" name="filter[]" value="">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    URLs
+                  </div>
+                  <div class="col-md-4">
+                    <select name="URL">
+                      <option value="0">No Filter</option>
+                      <option value="start">Starts With</option>
+                      <option value="end">Ends With</option>
+                      <option value="contains">Contains</option>
+                      <option value="matches">Exact Match</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" name="filter[]" value="">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    User Mentions
+                  </div>
+                  <div class="col-md-4">
+                    <select name="userMentions">
+                      <option value="0">No Filter</option>
+                      <option value="start">Starts With</option>
+                      <option value="end">Ends With</option>
+                      <option value="contains">Contains</option>
+                      <option value="matches">Exact Match</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" name="filter[]" value="">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    Hashtags
+                  </div>
+                  <div class="col-md-4">
+                    <select name="hashTags">
+                      <option value="0">No Filter</option>
+                      <option value="start">Starts With</option>
+                      <option value="end">Ends With</option>
+                      <option value="contains">Contains</option>
+                      <option value="matches">Exact Match</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" name="filter[]" value="">
+                  </div>
+                </div>
+
+              </div>
+              <hr>
+              <br>
+              <div class="form-group">
+                <label for="textFilter">Integer Filter</label><br>
+                <span class="small" style="margin-bottom:2%;">Since the backend uses "Twitter Streaming API", most of the times these value will remain 0</span>
+                <br>
+                <div class="row">
+                  <div class="col-md-4">
+                    Quote Count
+                  </div>
+                  <div class="col-md-4">
+                    <select name="quoteCount">
+                      <option value="0">No Filter</option>
+                      <option value="less">Less Than</option>
+                      <option value="more">Greater Than</option>
+                      <option value="equal">Equal To</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" name="filter[]" value="">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    Reply Count
+                  </div>
+                  <div class="col-md-4">
+                    <select name="replyCount">
+                      <option value="0">No Filter</option>
+                      <option value="less">Less Than</option>
+                      <option value="more">Greater Than</option>
+                      <option value="equal">Equal To</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" name="filter[]" value="">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    Favorite Count
+                  </div>
+                  <div class="col-md-4">
+                    <select name="favoriteCount">
+                      <option value="0">No Filter</option>
+                      <option value="less">Less Than</option>
+                      <option value="more">Greater Than</option>
+                      <option value="equal">Equal To</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" name="filter[]" value="">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    Retweet Count
+                  </div>
+                  <div class="col-md-4">
+                    <select name="retweetCount">
+                      <option value="0">No Filter</option>
+                      <option value="less">Less Than</option>
+                      <option value="more">Greater Than</option>
+                      <option value="equal">Equal To</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" name="filter[]" value="">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    User's Follower Count
+                  </div>
+                  <div class="col-md-4">
+                    <select name="uFollowCount">
+                      <option value="0">No Filter</option>
+                      <option value="less">Less Than</option>
+                      <option value="more">Greater Than</option>
+                      <option value="equal">Equal To</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" name="filter[]" value="">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    User's Favorite Count
+                  </div>
+                  <div class="col-md-4">
+                    <select name="uFavCount">
+                      <option value="0">No Filter</option>
+                      <option value="less">Less Than</option>
+                      <option value="more">Greater Than</option>
+                      <option value="equal">Equal To</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" name="filter[]" value="">
+                  </div>
+                </div>
+
+              </div>
+              <br>
+              <!-- <input type="hidden" name="page" value="0"> -->
+              <button type="button" class="btn btn-primary findButton">Submit</button>
+              <br><br>
+              <a href="http://localhost:3000/fetchTweets.html">Fetch Tweets</a>
+              <br><br>
+              <a href="" onclick="GenerateCSV();">Generate .CSV file for above filters</a>
+            </form>
+          </div>
+      </div>
+      <div class="col-md-7 displayData">
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/main.js">
+
+    </script>
+  </body>
+</html>
